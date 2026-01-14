@@ -39,11 +39,11 @@ public:
      * @param y 前後移動 (-100 〜 100)
      * @param z 旋回     (-100 〜 100)
      */
-    void drive(int x, int y, int z) {
-        int fl_speed = int(limit(y + x + z) / 100.0f * 255.0f);
-        int fr_speed = int(limit(y - x - z) / 100.0f * 255.0f);
-        int rl_speed = int(limit(y - x + z) / 100.0f * 255.0f);
-        int rr_speed = int(limit(y + x - z) / 100.0f * 255.0f);
+    void drive(int forward, int strafe, int turn) {
+        int fl_speed = int(limit( forward + strafe + turn) / 100.0f * 255.0f);
+        int fr_speed = int(limit(-forward + strafe - turn) / 100.0f * 255.0f);
+        int rl_speed = int(limit(-forward + strafe + turn) / 100.0f * 255.0f);
+        int rr_speed = int(limit( forward + strafe - turn) / 100.0f * 255.0f);
 
         Serial.print("fl= ");
         Serial.print(fl_speed);
