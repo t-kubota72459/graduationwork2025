@@ -48,6 +48,8 @@ void setup() {
   Serial.println("Pico I2C Slave Mode Started.");
 
   // I2C通信の初期化 (スレーブモード)
+  pinMode(SDA_PIN, INPUT_PULLUP);
+  pinMode(SCL_PIN, INPUT_PULLUP);
   Wire.setSDA(SDA_PIN);
   Wire.setSCL(SCL_PIN);
   Wire.begin(I2C_SLAVE_ADDRESS);
