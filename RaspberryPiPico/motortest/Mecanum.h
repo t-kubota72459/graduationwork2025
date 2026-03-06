@@ -41,8 +41,8 @@ public:
      */
     void drive(int forward, int strafe, int turn) {
         int fl_speed = int(limit( forward + strafe + turn) / 100.0f * 255.0f);
-        int fr_speed = int(limit(-forward + strafe - turn) / 100.0f * 255.0f);
-        int rl_speed = int(limit(-forward + strafe + turn) / 100.0f * 255.0f);
+        int fr_speed = int(limit(-forward + strafe + turn) / 100.0f * 255.0f);
+        int rl_speed = int(limit(-forward + strafe - turn) / 100.0f * 255.0f);
         int rr_speed = int(limit( forward + strafe - turn) / 100.0f * 255.0f);
 
         Serial.print("fl= ");

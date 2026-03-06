@@ -24,9 +24,12 @@ CommandData currentCommand = {0, 0, 0}; // 受信データを格納する変数
 //           en を PWM 制御する
 //           in1 と in2 の組み合わせで正転・逆転制御
 //           en, in1, in2 
-Motor motorFL(6, 7, 8, true); 
-Motor motorFR(9, 10, 11, true); 
-Motor motorRL(12, 13, 14);
+// 左側
+Motor motorFL(6, 7, 8);
+Motor motorRL(9, 10, 11);
+
+// 右側
+Motor motorFR(12, 13, 14); 
 Motor motorRR(18, 19, 20);
 
 Mecanum mecanum(motorFL, motorFR, motorRL, motorRR);
