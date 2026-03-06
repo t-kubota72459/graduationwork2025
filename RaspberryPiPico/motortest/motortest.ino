@@ -47,6 +47,7 @@ void receiveEvent(int byteCount) {
 }
 
 void setup() {
+  delay(5000);
   Serial.begin(115200);
   Serial.println("Pico I2C Slave Mode Started.");
 
