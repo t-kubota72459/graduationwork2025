@@ -54,6 +54,16 @@ void setup() {
   // I2C通信の初期化 (スレーブモード)
   pinMode(SDA_PIN, INPUT_PULLUP);
   pinMode(SCL_PIN, INPUT_PULLUP);
+
+  while (digitalRead(SDA_PIN) == LOW || digitalRead(SCL_PIN) == LOW) {
+    Serial.println("Waiting for M5Stack Power...");
+    delay(500); 
+  }
+
+  Serial.println("M5Stack is Powered ON!");
+
+  delay(2000);
+
   Wire.setSDA(SDA_PIN);
   Wire.setSCL(SCL_PIN);
   Wire.begin(I2C_SLAVE_ADDRESS);
